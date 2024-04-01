@@ -3,6 +3,8 @@
 ## Goal and vision
 **Public transport to Swiss Mountains** is a personal project initiated in 2023 with the aim of promoting the use of public transportation for mountain sports in Switzerland. Its primary objective is to provide information about the most efficient routes via public transportation to reach various altitudes in Switzerland. This project is designed to assist users in discovering new destinations for snow sports or simply finding an enjoyable spots with breathtaking views and fresh air atop Switzerland mountains, all while promoting environmental preservation.
 
+This application is published on [Streamlit Cloud](https://public-transport-to-swiss-mountain.streamlit.app/)
+
 ## Usage
 Create `.env` from `.env.example`
 ```
