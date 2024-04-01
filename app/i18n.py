@@ -37,10 +37,14 @@ def get_i18n_strings() -> Dictionary:
     Returns:
         Dictionary
     """
-    if 'language_sel' not in st.session_state:
-        return LANG['en']
-    else:
-        return LANG[st.session_state['language_sel']]
+    if 'language' not in st.query_params:
+        st.query_params['language'] = 'en'
+    return LANG[st.query_params['language']]
+
+def change_language_sel():
+    """Update language session state
+    """
+    st.query_params['language'] = st.session_state['language_sel']
 
 LANG = dict()
 

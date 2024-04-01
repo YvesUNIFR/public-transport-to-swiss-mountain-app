@@ -2,7 +2,7 @@ import polars as pl
 import streamlit as st
 from data_loading import load_stops, load_traveltimes
 from pdk_map import display_map
-from i18n import LANG, get_i18n_strings
+from i18n import LANG, get_i18n_strings, change_language_sel
 
 st.set_page_config(
     page_title='Public transport to swiss mountains'
@@ -36,9 +36,11 @@ st.title(texts.app_title)
 st.text(texts.app_introduction)
 
 language_sel = st.sidebar.selectbox(
-    f'{texts.menu_language}:',
-    LANG.keys(),
-    key='language_sel')
+    label=f'{texts.menu_language}:',
+    options=LANG.keys(),
+    index=int(list(LANG.keys()).index(st.query_params['language'])),
+    key='language_sel',
+    on_change=change_language_sel)
 start_location = st.sidebar.selectbox(
     f'{texts.menu_starting_location}:', ['Bern'])
 min_altitude = st.sidebar.number_input(
