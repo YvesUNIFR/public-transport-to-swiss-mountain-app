@@ -6,3 +6,4 @@ class Config:
     DATA_CONTAINER_ROOT = os.getenv('DATA_CONTAINER_ROOT')
     STOPS_PATH = DATA_CONTAINER_ROOT + '/stops.csv'
     TRAVELTIMES_PATH = DATA_CONTAINER_ROOT + '/traveltimes.csv'
+    SNOW_COVERAGE_PATH = DATA_CONTAINER_ROOT + '/snow_coverage.csv'

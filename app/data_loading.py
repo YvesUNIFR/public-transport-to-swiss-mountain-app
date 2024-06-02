@@ -19,6 +19,7 @@ def load_stops():
             pl.col('stopPoint').eq(True)
         )
         .select(
+            'number',
             'designationOfficial',
             'wgs84East',
             'wgs84North',
@@ -54,3 +55,13 @@ def load_traveltimes():
                 .str.zfill(2)
         )
     )
+
+
+@st.cache_data(ttl=3600)
+def load_snow_coverage():
+    """Load snow coverage data
+
+    Returns:
+        Snow coverage for each possible destination
+    """
+    return (pl.read_csv(Config.SNOW_COVERAGE_PATH, separator=';'))

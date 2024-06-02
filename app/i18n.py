@@ -10,10 +10,12 @@ class Dictionary:
     menu_starting_location: str = 'Starting location'
     menu_min_altitude: str = 'Min altitude'
     menu_max_altitude: str = 'Max altitude'
+    menu_min_snow_depth: str = 'Min snow depth Exolabs'
     menu_max_duration: str = 'Max transport duration'
     tooltip_stop: str = 'Stop'
     tooltip_altitude: str = 'Altitude'
     tooltip_duration: str = 'Duration'
+    tooltip_snow_depth: str = 'Snow depth'
     app_introduction: str = """
 Public transport to Swiss Mountains is a personal project initiated in 2023
 with the aim of promoting the use of public transportation for mountain sports
@@ -56,10 +58,12 @@ LANG['fr'] = Dictionary(
     menu_starting_location='Lieu de départ',
     menu_min_altitude='Altitude minimale',
     menu_max_altitude='Altitude maximale',
+    menu_min_snow_depth='Hauteur de neige minimale Exolabs',
     menu_max_duration='Durée maximale du trajet',
     tooltip_stop='Arrêt',
     tooltip_altitude='Altitude',
     tooltip_duration='Durée',
+    tooltip_snow_depth='Hauteur de neige',
     app_introduction="""
 En TP à la montagne est un projet personnel initié en 2023 dans le but de
 promouvoir l'utilisation des transports publics pour les sports de montagne
@@ -86,10 +90,12 @@ LANG['de'] = Dictionary(
     menu_starting_location='Startpunkt',
     menu_min_altitude='Minimale Höhe',
     menu_max_altitude='Maximale Höhe',
+    menu_min_snow_depth='Minimale Schneehöhe Exolabs',
     menu_max_duration='Maximale Transportdauer',
     tooltip_stop='Haltestelle',
     tooltip_altitude='Höhe',
     tooltip_duration='Dauer',
+    tooltip_snow_depth='Schneehöhe',
     app_introduction="""
 Mit ÖV in die Schweizer Berge ist ein persönliches Projekt, das im Jahr 2023
 gestartet wurde, um die Nutzung öffentlicher Verkehrsmittel für den

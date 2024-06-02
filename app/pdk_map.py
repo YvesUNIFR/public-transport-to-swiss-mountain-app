@@ -28,7 +28,8 @@ def display_map(destinations: pl.DataFrame, texts: Dictionary):
             'text': (
                 texts.tooltip_stop + ': {stop_stn}\n'
                 + texts.tooltip_altitude + ': {height} m\n'
-                + texts.tooltip_duration + ': {hours}:{minutes}'
+                + texts.tooltip_duration + ': {hours}:{minutes} \n'
+                + texts.tooltip_snow_depth + ': {snow_depth} cm'
             )
         }
     )
