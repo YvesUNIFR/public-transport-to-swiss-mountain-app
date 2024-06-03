@@ -5,6 +5,12 @@
 
 This application is published on [Streamlit Cloud](https://public-transport-to-swiss-mountain.streamlit.app/)
 
+## Data sources
+Ths application is based on following data sources:
+* GTFS data and public transport stops list from the [Open data platform mobility Switzerland](https://opentransportdata.swiss/)
+* Snow coverage data from [Exolabs](https://www.exolabs.ch/)
+Many thanks to the data providers.
+
 ## Usage
 Create `.env` from `.env.example`
 ```
@@ -22,8 +28,6 @@ If you're interested into this project, please feel free to contact the [author 
 ## Roadmap
 The project is a MVP. After this initial phase, new features could be added, for example:
 - API server to allow the integration in third-party systems
-- Usage of snow height information to enable additional more specific filters
-- Adding multiple starting locations to cover the biggest cities of Switzerland
 
 ## Contributing
 Ideas and feedbacks are very appreciated. Feel free to contact the [author on Linkedin](https://www.linkedin.com/in/hausermarc/) to discuss directly the way you would like to contribute to the project. See also the [contribution guidelines](https://gitlab.com/public-transport-to-swiss-mountains/travel-planner/-/blob/main/CONTRIBUTING.md).
