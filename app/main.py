@@ -1,8 +1,13 @@
 import polars as pl
 import streamlit as st
-from data_loading import load_stops, load_traveltimes, load_snow_coverage
+from data_loading import (
+    load_snow_coverage,
+    load_stops,
+    load_traveltimes,
+    unique_start_stations,
+)
+from i18n import LANG, change_language_sel, get_i18n_strings
 from pdk_map import display_map
-from i18n import LANG, get_i18n_strings, change_language_sel
 
 st.set_page_config(
     page_title='Public transport to swiss mountains'
@@ -25,7 +30,6 @@ def destinations(
     Returns:
         PL dataframe: list of destinations
     """
-    print(load_traveltimes()['start_stn'].unique())
     return (
         load_traveltimes()
         .join(load_stops(), left_on='stop_stn', right_on='designationOfficial')
@@ -51,7 +55,7 @@ language_sel = st.sidebar.selectbox(
     key='language_sel',
     on_change=change_language_sel)
 start_location = st.sidebar.selectbox(
-    f'{texts.menu_starting_location}:', ['Bern'])
+    f'{texts.menu_starting_location}:', unique_start_stations())
 min_altitude = st.sidebar.number_input(
     f'{texts.menu_min_altitude} [m]:', 1000, 4000, 1200)
 max_altitude = st.sidebar.number_input(
