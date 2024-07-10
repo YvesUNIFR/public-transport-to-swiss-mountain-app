@@ -13,6 +13,13 @@ st.set_page_config(
     page_title='Public transport to swiss mountains'
 )
 
+
+def change_start_loc_sel():
+    """Update start location query parameter
+    """
+    st.query_params['start'] = st.session_state['start_loc_sel']
+
+
 def destinations(
     min_altitude_m: int,
     max_altitude_m: int,
@@ -43,19 +50,31 @@ def destinations(
         )
     )
 
+
 texts = get_i18n_strings()
 
 st.title(texts.app_title)
 st.text(texts.app_introduction)
+
 
 language_sel = st.sidebar.selectbox(
     label=f'{texts.menu_language}:',
     options=LANG.keys(),
     index=int(list(LANG.keys()).index(st.query_params['language'])),
     key='language_sel',
-    on_change=change_language_sel)
+    on_change=change_language_sel
+)
+
+if 'start' not in st.query_params:
+    st.query_params['start'] = unique_start_stations()[0]
 start_location = st.sidebar.selectbox(
-    f'{texts.menu_starting_location}:', unique_start_stations())
+    label=f'{texts.menu_starting_location}:',
+    options=unique_start_stations(),
+    index=int(list(unique_start_stations()).index(st.query_params['start'])),
+    key='start_loc_sel',
+    on_change=change_start_loc_sel
+)
+
 min_altitude = st.sidebar.number_input(
     f'{texts.menu_min_altitude} [m]:', 1000, 4000, 1200)
 max_altitude = st.sidebar.number_input(

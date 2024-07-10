@@ -27,13 +27,16 @@ def load_stops():
         )
     )
 
+
+@st.cache_data(ttl=60)
 def unique_start_stations() -> list[str]:
     """Get unique start stations
 
     Returns:
         List of unique start station names
     """
-    return load_traveltimes()['start_stn'].unique()
+    return load_traveltimes()['start_stn'].unique().sort()
+
 
 @st.cache_data(ttl=3600)
 def load_traveltimes():
